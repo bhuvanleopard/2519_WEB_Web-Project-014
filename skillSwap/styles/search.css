@@ -1,0 +1,222 @@
+/* Search Styles */
+.search-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.search-header {
+    margin-bottom: 1.5rem;
+}
+
+.search-header h2 {
+    color: #4361ee;
+    margin-bottom: 1rem;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #4361ee;
+}
+
+.btn-search {
+    padding: 0 1.5rem;
+    background-color: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-search:hover {
+    background-color: #3a56d4;
+}
+
+.search-tabs {
+    display: flex;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 1.5rem;
+}
+
+.search-tab {
+    padding: 0.75rem 1.5rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-weight: 500;
+    color: #6c757d;
+    transition: all 0.2s;
+}
+
+.search-tab.active {
+    color: #4361ee;
+    border-bottom-color: #4361ee;
+}
+
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.result-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    transition: box-shadow 0.2s;
+}
+
+.result-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* User Card Styles */
+.user-card {
+    align-items: flex-start;
+}
+
+.user-info {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.user-details h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.username {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.user-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background-color: #f0f2f5;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #495057;
+}
+
+/* Community Card Styles */
+.community-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.community-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.community-members {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.community-description {
+    color: #495057;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Action Buttons */
+.btn-follow,
+.btn-join {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn-follow {
+    background-color: #4361ee;
+    color: white;
+}
+
+.btn-follow:hover {
+    background-color: #3a56d4;
+}
+
+.btn-join {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-join:hover {
+    background-color: #218838;
+}
+
+.empty-message {
+    text-align: center;
+    color: #6c757d;
+    padding: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .search-container {
+        padding: 1.5rem;
+    }
+    
+    .result-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .user-info {
+        width: 100%;
+    }
+    
+    .btn-follow,
+    .btn-join {
+        width: 100%;
+    }
+}
