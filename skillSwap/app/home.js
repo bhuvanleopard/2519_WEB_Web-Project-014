@@ -109,9 +109,9 @@ document.addEventListener('DOMContentLoaded', function() {
             document.head.appendChild(link);
 
             
-            let {createNewEventContainer } = await import(`../features/search/search.js`)
-            const newEvent = createNewEventContainer()
-            homePageContainer.appendChild(newEvent)
+            let {createSearchContainer } = await import(`../features/search/search.js`)
+            const searchContainer = createSearchContainer()
+            homePageContainer.appendChild(searchContainer)
 
         }catch(error){
             console.log(error)
@@ -143,5 +143,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
     })
 
+
+    let inboxPageBtn = document.getElementById("inboxPageBtn")
+
+    inboxPageBtn.addEventListener('click',async()=>{
+
+
+        try{
+
+            
+            homePageContainer.innerHTML=''
+
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = `../styles/inbox.css`;
+            document.head.appendChild(link);
+            // let { userCred } = await import("../features/auth/auth.js") ;
+            // console.log(userCred)
+            let {createInboxContainer } = await import(`../features/inbox/inbox.js`)
+
+            const inboxContainer = createInboxContainer();
+            
+            // const profileContainer = createProfileContainer("bhuvan chavan","bhuvanleopard", ["javascript","html","css"], {email:"sample", portfolio:"sample@home.com",linkedIn:"linkedIn"});
+            homePageContainer.appendChild(inboxContainer)
+
+        }catch(error){
+            console.log(error)
+        }
+    })
     
+
 });
