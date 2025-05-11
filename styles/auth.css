@@ -1,0 +1,218 @@
+/* Base Styles */
+:root {
+    --primary-color: #fe5720;
+    --secondary-color: #f42f14;
+    --accent-color: #4cc9f0;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --gray-color: #6c757d;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Background with overlay */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: monospace;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center fixed;
+                /* url('https://images.unsplash.com/flagged/photo-1564445477052-8a3787406bbf?q=80&w=1168&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no repeat center fixed; */
+                background-size: cover;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* App name/title */
+.app-title {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+/* Container styles */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Form container with backdrop blur */
+.form-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Form wrapper */
+.form-wrapper {
+    padding: 2.5rem;
+    transition: var(--transition);
+}
+
+.form-wrapper:not(.active) {
+    display: none;
+}
+
+/* Form headers */
+.form-wrapper h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+}
+
+/* Centered input groups */
+.input-group {
+    margin-bottom: 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: var(--transition);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: lighter
+}
+
+
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Password group - now properly centered */
+.password-group {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.password-group input {
+    width: 94%;
+    padding-right: 2.5rem; /* Space for eye icon */
+}
+
+.toggle-password {
+    position: absolute;
+    right: calc(50% - 150px + 1rem); /* Centered calculation */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    margin: 0.5rem auto 0;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-1px);
+}
+
+/* Form links */
+.toggle-form {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: rgb(255, 255, 255);
+}
+
+.toggle-form a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.toggle-form a:hover {
+    text-decoration: underline;
+}
+
+/* Messages - removed background */
+.message {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .app-title {
+        font-size: 2rem;
+        top: 1.5rem;
+    }
+    
+    .toggle-password {
+        right: 1rem; /* Adjust for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        border-radius: 0;
+    }
+}
